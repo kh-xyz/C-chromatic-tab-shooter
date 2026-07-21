@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C chromatic tab shooter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>C chromatic tab shooter</h1>
+        <p>Click the piano keys to insert tabs, or type freely. Hover over a highlighted tab in the box below to change its hole.</p>
+        
+        <div class="piano-wrapper">
+            <div id="piano" class="piano"></div>
+        </div>
+
+        <div id="popup-menu" class="popup hidden">
+            <div id="popup-options" class="popup-options"></div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-clear" class="btn btn-danger">Clear Tabs</button>
+            <button id="btn-copy" class="btn btn-primary">Copy Text</button>
+            <button id="btn-download" class="btn btn-success">Download .txt</button>
+        </div>
+
+        <div class="output-area">
+            <div id="tab-editor" contenteditable="true" placeholder="Start typing or clicking keys..."></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

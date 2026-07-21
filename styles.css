@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5eedc; /* Light beige background */
+    color: #4a3c31; /* Deep brown text for contrast */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background: #fffcf5; /* Very soft off-white/cream */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(74, 60, 49, 0.1); /* Soft brown shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    color: #5c4a3d; /* Darkish brown */
+}
+
+p {
+    text-align: center;
+    color: #8a7360; /* Muted brown */
+    margin-bottom: 20px;
+}
+
+.piano-wrapper {
+    overflow-x: auto;
+    padding: 10px 0 20px 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Authentic Piano Layout CSS - Wood & Warmth */
+.piano {
+    position: relative;
+    display: flex;
+    background: #4a3c31; /* Dark wood chassis */
+    border-radius: 5px;
+    padding: 4px;
+    width: max-content; 
+    margin: 0 auto;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 5px 15px rgba(74, 60, 49, 0.2);
+}
+
+.key {
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0 0 4px 4px;
+    transition: background 0.1s;
+}
+
+.white-key {
+    width: 40px;
+    height: 160px;
+    background: #fffdf9; /* Ivory/warm white keys */
+    border: 1px solid #dcd3c6; /* Soft beige borders */
+    margin: 0 1px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #6e5c4f;
+    z-index: 1;
+}
+
+.white-key:hover { background: #f0e9df; }
+.white-key.active { background: #e2d5c4; }
+
+.black-key {
+    width: 24px;
+    height: 100px;
+    background: #2b231d; /* Espresso */
+    position: absolute;
+    top: 4px; 
+    z-index: 2;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 8px;
+    font-size: 9px;
+    color: #b5a496;
+    box-shadow: inset 0 -2px 3px rgba(255,255,255,0.05);
+}
+
+.black-key:hover { background: #45372e; }
+.black-key.active { background: #5c4a3d; }
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    color: white;
+}
+
+.btn-primary { background: #c29b7a; } 
+.btn-primary:hover { background: #a88365; }
+.btn-danger { background: #c27a7a; } 
+.btn-danger:hover { background: #a86565; }
+.btn-success { background: #9bb582; } 
+.btn-success:hover { background: #82996a; }
+
+/* Rich Text Editor */
+.output-area {
+    width: 100%;
+}
+
+#tab-editor {
+    width: 100%;
+    min-height: 250px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #e0d5c1; 
+    border-radius: 8px;
+    background: #fffcf5;
+    font-family: monospace;
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    outline: none;
+    line-height: 1.8;
+    user-select: text;
+    color: #4a3c31;
+    position: relative;
+}
+
+#tab-editor:focus {
+    border-color: #c29b7a; 
+    box-shadow: 0 0 0 3px rgba(194, 155, 122, 0.2);
+}
+
+/* Custom placeholder class */
+#tab-editor.is-empty:before {
+    content: attr(placeholder);
+    color: #b5a496;
+    pointer-events: none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: block;
+}
+
+/* Hoverable Note Pill */
+.tab-note {
+    font-weight: bold;
+    color: #8c6a4f; 
+    cursor: pointer;
+    display: inline; 
+    transition: background-color 0.2s;
+    border-bottom: 1px dashed transparent;
+}
+
+.tab-note:hover {
+    background-color: #f0e9df; 
+    border-bottom: 1px dashed #b5a496;
+    border-radius: 2px;
+}
+
+/* Popup Menu */
+.popup {
+    position: absolute;
+    background: #fffcf5;
+    border: 1px solid #e0d5c1;
+    box-shadow: 0 8px 20px rgba(74, 60, 49, 0.15);
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 100;
+    width: max-content;
+}
+
+.popup-options {
+    display: flex;
+    gap: 6px;
+}
+
+.popup-btn {
+    padding: 6px 12px;
+    border: 1px solid #e0d5c1;
+    background: #f5eedc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #5c4a3d;
+}
+
+.popup-btn:hover {
+    background: #e2d5c4;
+}
+
+.hidden {
+    display: none;
+}
